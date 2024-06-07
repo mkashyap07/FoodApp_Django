@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-4">
+        <img src="{{item.item_image}}">
+    </div>
+    <div class="col-md-2">
+        <h2>{{ item.item_name }}</h2>
+    </div>
+    <div class="col-md-2">
+        {{ item.item_desc }}
+    </div>
+    <div class="col-md-2">
+        <br>
+        <a href="{% url 'foodapp:create_item' %}" class="btn btn-success">Add Item</a>
+        <br><br>
+        <a href="{% url 'foodapp:update' item.id %}" class="btn btn-success">Upadate</a>
+        <br><br>
+        <a href="{% url 'foodapp:delete_item' item.id %}" class="btn btn-success">Delete</a>
+    </div>
+</div>
+
+{% endblock %}
